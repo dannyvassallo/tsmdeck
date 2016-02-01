@@ -1,5 +1,4 @@
-![Middleman Logo](https://s3.amazonaws.com/middlemantemplate/materialize.png "Middleman Logo")
-#Middleman 4 / Materialize CSS Boilerplate
+#TSM Deck
 
 *Oh It's so f@!king nice.*
 
@@ -24,16 +23,16 @@ There is also a partial/template for meta info on most social networks.
 ####Getting Started
 Clone the repo using the GUI or terminal. To do so in terminal, use the following:
 ```shell
-git clone https://github.com/dannyvassallo/middleman-materialize.git
-cd middleman-materialize
+git clone https://github.com/dannyvassallo/tsmdeck.git
+cd tsmdeck
 ```
 
-From the "middleman-materialize" directory, install the gems by running the following:
+From the "tsmdeck" directory, install the gems by running the following:
 ```shell
 bundle install
 ```
 
-To fire up the server while in the "middleman-materialize" directory use this command:
+To fire up the server while in the "tsmdeck" directory use this command:
 ```shell
 middleman s
 ```
@@ -49,7 +48,7 @@ If you find yourself curious as to what directory you are in use the following i
 ```shell
 pwd
 ```
-It should turn up "middleman-materialize"
+It should turn up "tsmdeck"
 
 ####Analytics Setup
 
