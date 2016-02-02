@@ -18,7 +18,11 @@ $(function(){
   hideAll();
   // Init full page
   $('#fullpage').fullpage({
-    anchors: ['intro'],
+    //Navigation
+    anchors: ['intro', 'whatwedo', 'sharecontest'],
+    navigation: true,
+    navigationPosition: 'right',
+    loopBottom: true,
     afterLoad: function(anchorLink){
       var loadedSection = $(this);
       //using anchorLink
@@ -42,6 +46,60 @@ $(function(){
             $('#what-we-do-img').addClass('animated fadeInUp');
           }, 1000);
       }
+      if(anchorLink == 'sharecontest'){
+          // remove classes from below
+          $('#what-we-do-img').removeClass('animated fadeInUp');
+          $('#what-logo').removeClass('animated fadeInLeft');
+          $('#what-info-text').removeClass('animated fadeInRight');
+      }
     }
   });
+});
+
+// Get tour dates for demo
+
+$(document).ready(function() {
+  $.ajax({
+    type: "GET",
+    url: "dates.txt",
+    dataType: "text",
+    success: function(data){
+      addDatesToDropDown(data);
+    }
+  });
+});
+
+function addDatesToDropDown(data){
+  var parsed = $.csv.toObjects(data);
+  $(parsed).each(function(){
+    var venue = this.venue;
+    $('#tour-dropdown').append($('<option>', {
+      value: venue,
+      text : venue
+    }));
+    $('select').material_select();
+    $('.dropdown-content li').on('click', function(){
+      $('#tour-input').val($('.select-dropdown').val());
+      $('#tour-input').next('.error-box').next('span').html('');
+    });
+  });
+}
+
+
+// Fix inputs
+$('input').focus(function(){
+  if(this.type != 'checkbox'){
+    var query = this.id;
+    $("label[for='"+query+"']").addClass('active');
+  }
+}).blur(function(){
+  if($(this).val() != ''){
+    // do nothing
+  } else if(this.type != 'checkbox'){
+    var query = this.id;
+    $("label[for='"+query+"']").removeClass('active');
+  } else {
+    var query = this.id;
+    $("label[for='"+query+"']").removeClass('active');
+  }
 });

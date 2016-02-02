@@ -1,5 +1,10 @@
 //= require jquery
+//= require _init_facebook
 //= require materialize-sprockets
 //= require _init-materialize
 //= require _jquery.fullpage
+//= require _jquery.csv-0.71
+//= require _jquery.validate.min
+//= require _additional-methods.min
+//= require _validate-form
 //= require _custom

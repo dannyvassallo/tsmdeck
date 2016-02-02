@@ -1,0 +1,77 @@
+#hidden_iframe{
+  display: none;
+}
+
+
+// FORMS
+
+/* label color */
+ .input-field label {
+   color: #fff;
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   color: #fff;
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid #fff;
+   box-shadow: 0 1px 0 0 #fff;
+ }
+ /* valid color */
+ .input-field input[type=text].valid {
+   border-bottom: 1px solid #fff;
+   box-shadow: 0 1px 0 0 #fff;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+   border-bottom: 1px solid #fff;
+   box-shadow: 0 1px 0 0 #fff;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: #fff;
+ }
+
+#contest-form {
+    border: 10px solid #0097a7;
+    padding: 48px;
+    box-shadow: 0px 0px 0px 10px #fff;
+    background: url('https://s3.amazonaws.com/myfangate.com/fightforsomething/grunge.jpg');
+    background-repeat: repeat;
+}
+
+span.error{
+  position: relative;
+  display: block;
+  @extend .red-text;
+}
+
+.error-box{
+  height: 25px;
+}
+
+
+input:not([type]):focus:not([readonly]),
+input:not([email]):focus:not([readonly]){
+  border-bottom: 1px solid #00bcd4;
+  box-shadow: 0 1px 0 0 #00bcd4;
+}
+
+input:not([type]):focus:not([readonly])+label,
+input:not([email]):focus:not([readonly])+label,{
+  color: #00bcd4;
+}
+
+input[type="checkbox"].filled-in:checked+label:after {
+  border: 2px solid #00bcd4;
+  background-color: #00bcd4;
+}
+
+input, select, textarea{
+    color: #fff;
+}
+
+textarea:focus, input:focus {
+    color: #fff;
+}
