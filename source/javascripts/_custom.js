@@ -17,6 +17,8 @@ function hideAll(){
   $('#imac').css('opacity', 0);
   $('#imac-header').css('opacity', 0);
   $('#imac-text').css('opacity', 0);
+  $('#hashtags').css('opacity', 0);
+  $('#insta-text').css('opacity', 0);
 }
 
 $(function(){
@@ -24,7 +26,7 @@ $(function(){
   // Init full page
   $('#fullpage').fullpage({
     //Navigation
-    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify'],
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram'],
     navigation: true,
     navigationPosition: 'right',
     loopBottom: true,
@@ -68,9 +70,11 @@ $(function(){
           }, 500);
       }
       if(anchorLink == 'spotify'){
-          // remove classes from above
+          // remove classes from above and below
           $('#share-ipad').removeClass('animated fadeInRight');
           $('#share-contest').removeClass('animated fadeInLeft');
+          $('#insta-text').removeClass('animated fadeInRight');
+          $('#hashtags').removeClass('animated fadeInLeft');
           // show current
           setTimeout(function(){
             $('#imac').addClass('animated fadeInUp');
@@ -79,6 +83,17 @@ $(function(){
             $('#imac-text').addClass('animated fadeInRight');
           }, 1200);
           $('#imac-header').addClass('animated fadeInLeft');
+      }
+      if(anchorLink == 'instagram'){
+          // remove classes from above
+          $('#imac').removeClass('animated fadeInUp');
+          $('#imac-header').removeClass('animated fadeInLeft');
+          $('#imac-text').removeClass('animated fadeInRight');
+          // show current
+          setTimeout(function(){
+            $('#insta-text').addClass('animated fadeInRight');
+          }, 500);
+          $('#hashtags').addClass('animated fadeInLeft');
       }
     }
   });
