@@ -12,6 +12,8 @@ function hideAll(){
   $('#what-we-do-img').css('opacity', 0);
   $('#what-logo').css('opacity', 0);
   $('#what-info-text').css('opacity', 0);
+  $('#share-contest').css('opacity', 0);
+  $('#share-ipad').css('opacity', 0);
 }
 
 $(function(){
@@ -19,7 +21,7 @@ $(function(){
   // Init full page
   $('#fullpage').fullpage({
     //Navigation
-    anchors: ['intro', 'whatwedo', 'sharecontest'],
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify'],
     navigation: true,
     navigationPosition: 'right',
     loopBottom: true,
@@ -37,6 +39,8 @@ $(function(){
       if(anchorLink == 'whatwedo'){
           // Hide previous elements
           $('#tsm-logo').removeClass('animated fadeInUp');
+          $('#share-ipad').removeClass('animated fadeInRight');
+          $('#share-contest').removeClass('animated fadeInLeft');
           // show current elements
           $('#what-logo').addClass('animated fadeInLeft');
           setTimeout(function(){
@@ -47,10 +51,13 @@ $(function(){
           }, 1000);
       }
       if(anchorLink == 'sharecontest'){
-          // remove classes from below
+          // remove classes from above
           $('#what-we-do-img').removeClass('animated fadeInUp');
           $('#what-logo').removeClass('animated fadeInLeft');
           $('#what-info-text').removeClass('animated fadeInRight');
+          // show current
+          $('#share-ipad').addClass('animated fadeInRight');
+          $('#share-contest').addClass('animated fadeInLeft');
       }
     }
   });
