@@ -24,7 +24,7 @@ $(function(){
   // Init full page
   $('#fullpage').fullpage({
     //Navigation
-    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify'],
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram'],
     navigation: true,
     navigationPosition: 'right',
     loopBottom: true,
