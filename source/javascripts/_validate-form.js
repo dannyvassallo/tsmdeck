@@ -103,9 +103,6 @@ $("#contest-form").validate({
     setTimeout(function(){
       $('#contest-form').html(successMsg).css('min-height', formH);
     }, 500);
-    setTimeout(function(){
-      $.scrollTo('#thankyou', 1000, { offset: 0, 'axis': 'y' });
-    }, 600);
   },
   errorElement : 'span',
   errorPlacement: function (error, element) {

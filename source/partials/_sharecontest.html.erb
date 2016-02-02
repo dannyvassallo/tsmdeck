@@ -1,64 +1,9 @@
 <div class="row">
   <div class="col s12 m6 l4 offset-l2 white-text left-align">
     <h2>Share Contest</h2>
-    <p><%= lorem.paragraphs(2) %></p>
+    <p><%= lorem.sentences(2) %></p>
     <!-- CONTEST -->
-    <iframe name="hidden_iframe" id="hidden_iframe"></iframe>
-    <form id="contest-form" class="col s12" action="https://docs.google.com/a/trendsettermarketing.net/forms/d/1aF5E4XyLN3fAPx11DG3QIG2eXstTwdDf7Cg4jwp50zo/formResponse" method="POST" target="hidden_iframe">
-      <div class="input-field">
-        <!-- First Name -->
-        <input id="firstName" name="entry.1658002111" type="text" readonly onfocus="this.removeAttribute('readonly');">
-        <label for="firstName">First Name</label>
-      </div>
-      <div class="error-box"></div>
-      <div class="input-field">
-        <!-- Last Name -->
-        <input id="lastName" name="entry.1256494619" type="text" readonly onfocus="this.removeAttribute('readonly');">
-        <label for="lastName">Last Name</label>
-      </div>
-      <div class="error-box"></div>
-      <div class="input-field">
-        <!-- Email Address -->
-        <input id="email" name="entry.1754389017" type="email" readonly onfocus="this.removeAttribute('readonly');">
-        <label for="email">Email</label>
-      </div>
-      <div class="error-box"></div>
-      <div class="input-field">
-        <select id="tour-dropdown" readonly onfocus="this.removeAttribute('readonly');">
-          <option value="" disabled selected>CLOSEST TOUR DATE</option>
-        </select>
-        <input id="tour-input" name="entry.1168099912" type="hidden">
-        <div class="error-box"></div>
-      </div>
-      <div class="input-field">
-        <!-- Agree To Emails -->
-        <input type="checkbox" name="entry.1317151083" value="True" class="filled-in" id="emails" checked="checked" />
-        <label for="emails">I agree to receive emails from Trendsetter</label>
-      </div>
-      <div class="error-box"></div>
-      <div class="input-field">
-        <!-- Agree To Rules -->
-        <input type="checkbox" name="entry.1624692557" value="True" class="filled-in" id="rules"/>
-        <label for="rules">I agree to the <a href="#" target="_blank">rules and terms of this contest</a></label>
-      </div>
-      <div class="error-box"></div>
-      <div class="input-field">
-        <div class="col s12 center-align margin-top">
-          <!-- facebook button -->
-          <div class="col s12 l6 center-align">
-            <div id="fb-share" class="btn btn-large waves-effect waves-light cyan valign-wrapper" onclick="fbShare();"><i class="fa fa-facebook-square"></i> SHARE</div>
-            <!-- Hidden Input -->
-            <input id="fbshareinput" type="checkbox" name="entry.1001572892" value="True"/>
-            <div class="error-box"></div>
-          </div>
-          <!-- Submit Button -->
-          <div class="col s12 l6 center-align">
-            <button class="btn btn-large waves-effect waves-light cyan" type="submit" name="action">SUBMIT</button>
-          </div>
-        </div>
-      </div>
-    </form>
-    <!-- END CONTEST -->
+    <%= partial 'partials/contest' %>
   </div>
   <div class="col s6 offset-s6 m6 l4 offset-l1 valign-wrapper">
     <img class="full-w" src="https://s3.amazonaws.com/tsmdeck/sharecontestimage.png">
