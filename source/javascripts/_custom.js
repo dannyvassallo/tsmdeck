@@ -14,6 +14,9 @@ function hideAll(){
   $('#what-info-text').css('opacity', 0);
   $('#share-contest').css('opacity', 0);
   $('#share-ipad').css('opacity', 0);
+  $('#imac').css('opacity', 0);
+  $('#imac-header').css('opacity', 0);
+  $('#imac-text').css('opacity', 0);
 }
 
 $(function(){
@@ -51,13 +54,31 @@ $(function(){
           }, 1000);
       }
       if(anchorLink == 'sharecontest'){
-          // remove classes from above
+          // remove classes from above and below
           $('#what-we-do-img').removeClass('animated fadeInUp');
           $('#what-logo').removeClass('animated fadeInLeft');
           $('#what-info-text').removeClass('animated fadeInRight');
+          $('#imac').removeClass('animated fadeInUp');
+          $('#imac-header').removeClass('animated fadeInLeft');
+          $('#imac-text').removeClass('animated fadeInRight');
           // show current
           $('#share-ipad').addClass('animated fadeInRight');
-          $('#share-contest').addClass('animated fadeInLeft');
+          setTimeout(function(){
+            $('#share-contest').addClass('animated fadeInLeft');
+          }, 500);
+      }
+      if(anchorLink == 'spotify'){
+          // remove classes from above
+          $('#share-ipad').removeClass('animated fadeInRight');
+          $('#share-contest').removeClass('animated fadeInLeft');
+          // show current
+          setTimeout(function(){
+            $('#imac').addClass('animated fadeInUp');
+          }, 500);
+          setTimeout(function(){
+            $('#imac-text').addClass('animated fadeInRight');
+          }, 1200);
+          $('#imac-header').addClass('animated fadeInLeft');
       }
     }
   });
