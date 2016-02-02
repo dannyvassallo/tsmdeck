@@ -1,3 +1,12 @@
+# require 'json'
+
+# helpers do
+#   def get_tsm_portfolio
+#     response = HTTParty.get('https://www.trendsettermarketing.net/wp-json/wp/v2/posts?filter[type]=us_portfolio&filter[orderby]=desc&filter[posts_per_page]=20')
+#     @body = JSON.parse(response.body)
+#   end
+# end
+
 ###
 # Page options, layouts, aliases and proxies
 ###

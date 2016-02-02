@@ -12,13 +12,22 @@ function hideAll(){
   $('#what-we-do-img').css('opacity', 0);
   $('#what-logo').css('opacity', 0);
   $('#what-info-text').css('opacity', 0);
+  $('#share-contest').css('opacity', 0);
+  $('#share-ipad').css('opacity', 0);
+  $('#imac').css('opacity', 0);
+  $('#imac-header').css('opacity', 0);
+  $('#imac-text').css('opacity', 0);
 }
 
 $(function(){
   hideAll();
   // Init full page
   $('#fullpage').fullpage({
-    anchors: ['intro'],
+    //Navigation
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify'],
+    navigation: true,
+    navigationPosition: 'right',
+    loopBottom: true,
     afterLoad: function(anchorLink){
       var loadedSection = $(this);
       //using anchorLink
@@ -33,6 +42,8 @@ $(function(){
       if(anchorLink == 'whatwedo'){
           // Hide previous elements
           $('#tsm-logo').removeClass('animated fadeInUp');
+          $('#share-ipad').removeClass('animated fadeInRight');
+          $('#share-contest').removeClass('animated fadeInLeft');
           // show current elements
           $('#what-logo').addClass('animated fadeInLeft');
           setTimeout(function(){
@@ -42,6 +53,81 @@ $(function(){
             $('#what-we-do-img').addClass('animated fadeInUp');
           }, 1000);
       }
+      if(anchorLink == 'sharecontest'){
+          // remove classes from above and below
+          $('#what-we-do-img').removeClass('animated fadeInUp');
+          $('#what-logo').removeClass('animated fadeInLeft');
+          $('#what-info-text').removeClass('animated fadeInRight');
+          $('#imac').removeClass('animated fadeInUp');
+          $('#imac-header').removeClass('animated fadeInLeft');
+          $('#imac-text').removeClass('animated fadeInRight');
+          // show current
+          $('#share-ipad').addClass('animated fadeInRight');
+          setTimeout(function(){
+            $('#share-contest').addClass('animated fadeInLeft');
+          }, 500);
+      }
+      if(anchorLink == 'spotify'){
+          // remove classes from above
+          $('#share-ipad').removeClass('animated fadeInRight');
+          $('#share-contest').removeClass('animated fadeInLeft');
+          // show current
+          setTimeout(function(){
+            $('#imac').addClass('animated fadeInUp');
+          }, 500);
+          setTimeout(function(){
+            $('#imac-text').addClass('animated fadeInRight');
+          }, 1200);
+          $('#imac-header').addClass('animated fadeInLeft');
+      }
     }
   });
+});
+
+// Get tour dates for demo
+
+$(document).ready(function() {
+  $.ajax({
+    type: "GET",
+    url: "dates.txt",
+    dataType: "text",
+    success: function(data){
+      addDatesToDropDown(data);
+    }
+  });
+});
+
+function addDatesToDropDown(data){
+  var parsed = $.csv.toObjects(data);
+  $(parsed).each(function(){
+    var venue = this.venue;
+    $('#tour-dropdown').append($('<option>', {
+      value: venue,
+      text : venue
+    }));
+    $('select').material_select();
+    $('.dropdown-content li').on('click', function(){
+      $('#tour-input').val($('.select-dropdown').val());
+      $('#tour-input').next('.error-box').next('span').html('');
+    });
+  });
+}
+
+
+// Fix inputs
+$('input').focus(function(){
+  if(this.type != 'checkbox'){
+    var query = this.id;
+    $("label[for='"+query+"']").addClass('active');
+  }
+}).blur(function(){
+  if($(this).val() != ''){
+    // do nothing
+  } else if(this.type != 'checkbox'){
+    var query = this.id;
+    $("label[for='"+query+"']").removeClass('active');
+  } else {
+    var query = this.id;
+    $("label[for='"+query+"']").removeClass('active');
+  }
 });
