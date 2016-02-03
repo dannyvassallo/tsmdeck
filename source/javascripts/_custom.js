@@ -19,6 +19,11 @@ function hideAll(){
   $('#imac-text').css('opacity', 0);
   $('#hashtags').css('opacity', 0);
   $('#insta-text').css('opacity', 0);
+  $('#game-text').css('opacity', 0);
+  $('#game-headline').css('opacity', 0);
+  $('#gamephone1').css('opacity', 0);
+  $('#gamephone2').css('opacity', 0);
+  $('#gamephone3').css('opacity', 0);
 }
 
 $(function(){
@@ -26,7 +31,7 @@ $(function(){
   // Init full page
   $('#fullpage').fullpage({
     //Navigation
-    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram'],
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram', 'games'],
     navigation: true,
     navigationPosition: 'right',
     loopBottom: true,
@@ -89,11 +94,35 @@ $(function(){
           $('#imac').removeClass('animated fadeInUp');
           $('#imac-header').removeClass('animated fadeInLeft');
           $('#imac-text').removeClass('animated fadeInRight');
+          $('#game-text').removeClass('animated fadeInUp');
+          $('#game-headline').removeClass('animated fadeInDown');
+          $('#gamephone1').removeClass('animated fadeInLeft');
+          $('#gamephone2').removeClass('animated fadeInLeft');
+          $('#gamephone3').removeClass('animated fadeInLeft');
           // show current
           setTimeout(function(){
             $('#insta-text').addClass('animated fadeInRight');
           }, 500);
           $('#hashtags').addClass('animated fadeInLeft');
+      }
+      if(anchorLink == 'games'){
+          // remove classes from above
+          $('#hashtags').removeClass('animated fadeInLeft');
+          $('#insta-text').removeClass('animated fadeInRight');
+          // show current
+          $('#game-headline').addClass('animated fadeInDown');
+          setTimeout(function(){
+            $('#game-text').addClass('animated fadeInUp');
+          }, 500);
+          setTimeout(function(){
+            $('#gamephone1').addClass('animated fadeInLeft');
+          }, 1000);
+          setTimeout(function(){
+            $('#gamephone2').addClass('animated fadeInLeft');
+          }, 1300);
+          setTimeout(function(){
+            $('#gamephone3').addClass('animated fadeInLeft');
+          }, 1600);
       }
     }
   });
