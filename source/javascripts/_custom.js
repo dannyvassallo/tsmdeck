@@ -31,7 +31,7 @@ $(function(){
   // Init full page
   $('#fullpage').fullpage({
     //Navigation
-    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram', 'games'],
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram', 'games', 'technologies'],
     navigation: true,
     navigationPosition: 'right',
     loopBottom: true,
@@ -123,6 +123,15 @@ $(function(){
           setTimeout(function(){
             $('#gamephone3').addClass('animated fadeInLeft');
           }, 1600);
+      }
+      if(anchorLink == 'technologies'){
+          // remove classes from above
+          $('#game-text').removeClass('animated fadeInUp');
+          $('#game-headline').removeClass('animated fadeInDown');
+          $('#gamephone1').removeClass('animated fadeInLeft');
+          $('#gamephone2').removeClass('animated fadeInLeft');
+          $('#gamephone3').removeClass('animated fadeInLeft');
+          // show current
       }
     }
   });
