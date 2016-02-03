@@ -44,8 +44,8 @@ $(function(){
       if(anchorLink == 'whatwedo'){
           // Hide previous elements
           $('#tsm-logo').removeClass('animated fadeInUp');
-          $('#share-ipad').removeClass('animated fadeInRight');
-          $('#share-contest').removeClass('animated fadeInLeft');
+          $('#share-ipad').removeClass('animated fadeInDown');
+          $('#share-contest').removeClass('animated fadeInUp');
           // show current elements
           $('#what-logo').addClass('animated fadeInLeft');
           setTimeout(function(){
@@ -64,15 +64,15 @@ $(function(){
           $('#imac-header').removeClass('animated fadeInLeft');
           $('#imac-text').removeClass('animated fadeInRight');
           // show current
-          $('#share-ipad').addClass('animated fadeInRight');
+          $('#share-ipad').addClass('animated fadeInDown');
           setTimeout(function(){
-            $('#share-contest').addClass('animated fadeInLeft');
+            $('#share-contest').addClass('animated fadeInUp');
           }, 500);
       }
       if(anchorLink == 'spotify'){
           // remove classes from above and below
-          $('#share-ipad').removeClass('animated fadeInRight');
-          $('#share-contest').removeClass('animated fadeInLeft');
+          $('#share-ipad').removeClass('animated fadeInDown');
+          $('#share-contest').removeClass('animated fadeInUp');
           $('#insta-text').removeClass('animated fadeInRight');
           $('#hashtags').removeClass('animated fadeInLeft');
           // show current
