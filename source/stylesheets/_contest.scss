@@ -35,7 +35,7 @@
 
 #contest-form {
     border: 10px solid #0097a7;
-    padding: 48px;
+    padding: 8px;
     box-shadow: 0px 0px 0px 10px #fff;
     background: url('https://s3.amazonaws.com/myfangate.com/fightforsomething/grunge.jpg');
     background-repeat: repeat;
@@ -74,4 +74,12 @@ input, select, textarea{
 
 textarea:focus, input:focus {
     color: #fff;
+}
+
+input{
+  margin: 0 !important;
+}
+
+.input-field{
+  margin-top: 0 !important;
 }
