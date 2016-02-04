@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.5)
+    activesupport (4.2.5.1)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -40,6 +40,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.9.1)
     execjs (2.6.0)
+    fast_blank (1.0.0)
     fastimage (1.8.1)
       addressable (~> 2.3, >= 2.3.5)
     ffi (1.9.10)
@@ -52,9 +53,6 @@ GEM
     hashie (3.4.3)
     htmlcompressor (0.2.0)
     http_parser.rb (0.6.0)
-    httparty (0.13.7)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jquery-middleman (3.1.2)
       thor (>= 0.14, < 2.0)
@@ -65,20 +63,20 @@ GEM
       rb-inotify (>= 0.9)
     materialize-sass (0.97.5)
       sass (~> 3.3)
-    middleman (4.0.0)
+    middleman (4.1.1)
       coffee-script (~> 2.2)
       compass-import-once (= 1.0.5)
       haml (>= 4.0.5)
       kramdown (~> 1.2)
-      middleman-cli (= 4.0.0)
-      middleman-core (= 4.0.0)
+      middleman-cli (= 4.1.1)
+      middleman-core (= 4.1.1)
       sass (>= 3.4.0, < 4.0)
-    middleman-cli (4.0.0)
+    middleman-cli (4.1.1)
       thor (>= 0.17.0, < 2.0)
     middleman-compass (4.0.1)
       compass (>= 1.0.0, < 2.0.0)
       middleman-core (>= 4.0.0)
-    middleman-core (4.0.0)
+    middleman-core (4.1.1)
       activesupport (~> 4.2)
       addressable (~> 2.4.0)
       backports (~> 3.6)
@@ -87,12 +85,14 @@ GEM
       contracts (~> 0.12.0)
       erubis
       execjs (~> 2.0)
+      fast_blank
       fastimage (~> 1.8)
       hamster (~> 2.0)
       hashie (~> 3.4)
       i18n (~> 0.7.0)
       listen (~> 3.0)
       padrino-helpers (~> 0.13.0)
+      parallel
       rack (>= 1.4.5, < 2.0)
       sass (>= 3.4)
       tilt (~> 1.4.1)
@@ -118,7 +118,6 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
-    multi_xml (0.5.5)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     padrino-helpers (0.13.1)
@@ -127,6 +126,7 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.13.1)
       activesupport (>= 3.1)
+    parallel (1.6.1)
     rack (1.6.4)
     rack-livereload (0.3.16)
       rack
@@ -154,9 +154,7 @@ PLATFORMS
 
 DEPENDENCIES
   font-awesome-middleman
-  httparty
   jquery-middleman
-  json
   materialize-sass
   middleman (>= 4.0.0)
   middleman-compass (>= 4.0.0)
