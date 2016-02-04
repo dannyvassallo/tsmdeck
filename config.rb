@@ -36,7 +36,7 @@ configure :development do
   activate :livereload
   set :debug_assets, true
   activate :minify_css
-  # activate :minify_html
+  activate :minify_html
 end
 
 ###
@@ -55,7 +55,7 @@ configure :build do
   # Minify CSS on build
   activate :minify_css
   # Minify HTML on build
-  # activate :minify_html
+  activate :minify_html
   # Minify Javascript on build
   activate :minify_javascript
 end
