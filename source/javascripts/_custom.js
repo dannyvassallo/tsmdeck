@@ -24,6 +24,15 @@ function hideAll(){
   $('#gamephone1').css('opacity', 0);
   $('#gamephone2').css('opacity', 0);
   $('#gamephone3').css('opacity', 0);
+  $('#tech-head').css('opacity', 0);
+  $('#sublime').css('opacity', 0);
+  $('#terminal').css('opacity', 0);
+  $('#security').css('opacity', 0);
+  $('#socials').css('opacity', 0);
+  $('#mobile').css('opacity', 0);
+  $('#photoshop').css('opacity', 0);
+  $('#design').css('opacity', 0);
+  $('#analytics').css('opacity', 0);
 }
 
 $(function(){
@@ -106,9 +115,18 @@ $(function(){
           $('#hashtags').addClass('animated fadeInLeft');
       }
       if(anchorLink == 'games'){
-          // remove classes from above
+          // remove classes from above and below
           $('#hashtags').removeClass('animated fadeInLeft');
           $('#insta-text').removeClass('animated fadeInRight');
+          $('#tech-head').removeClass('animated rollIn');
+          $('#sublime').removeClass('animated fadeInDown');
+          $('#mobile').removeClass('animated fadeInUp');
+          $('#terminal').removeClass('animated fadeInDown');
+          $('#photoshop').removeClass('animated fadeInUp');
+          $('#security').removeClass('animated fadeInDown');
+          $('#design').removeClass('animated fadeInUp');
+          $('#socials').removeClass('animated fadeInDown');
+          $('#analytics').removeClass('animated fadeInUp');
           // show current
           $('#game-headline').addClass('animated fadeInDown');
           setTimeout(function(){
@@ -132,6 +150,23 @@ $(function(){
           $('#gamephone2').removeClass('animated fadeInLeft');
           $('#gamephone3').removeClass('animated fadeInLeft');
           // show current
+          $('#tech-head').addClass('animated rollIn');
+          setTimeout(function(){
+            $('#sublime').addClass('animated fadeInDown');
+            $('#mobile').addClass('animated fadeInUp');
+          }, 1000);
+          setTimeout(function(){
+            $('#terminal').addClass('animated fadeInDown');
+            $('#photoshop').addClass('animated fadeInUp');
+          }, 1250);
+          setTimeout(function(){
+            $('#security').addClass('animated fadeInDown');
+            $('#design').addClass('animated fadeInUp');
+          }, 1500);
+          setTimeout(function(){
+            $('#socials').addClass('animated fadeInDown');
+            $('#analytics').addClass('animated fadeInUp');
+          }, 1750);
       }
     }
   });
