@@ -6,7 +6,7 @@
   margin-top: -26%;
 }
 
-#what, #insta{
+#what, #insta, #our-work{
   background: url('https://s3.amazonaws.com/tsmdeck/purp.jpg');
   background-size: cover;
   background-position: center center;
@@ -91,4 +91,18 @@
     rgb(0, 190, 164) 68px 68px,
     rgb(0, 190, 164) 69px 69px,
     rgb(0, 191, 165) 70px 70px;
+}
+
+.slider .slides li img {
+    background-position: top center !important;
+}
+
+
+.slider .slides li .caption {
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #00bfa5 !important;
+    padding: 20px !important;
 }

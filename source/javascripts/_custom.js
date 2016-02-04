@@ -33,6 +33,9 @@ function hideAll(){
   $('#photoshop').css('opacity', 0);
   $('#design').css('opacity', 0);
   $('#analytics').css('opacity', 0);
+  $('#work-title').css('opacity', 0);
+  $('#tsm-video').css('opacity', 0);
+  $('#project-slider').css('opacity', 0);
 }
 
 $(function(){
@@ -40,7 +43,7 @@ $(function(){
   // Init full page
   $('#fullpage').fullpage({
     //Navigation
-    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram', 'games', 'technologies'],
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram', 'games', 'technologies', 'work'],
     navigation: true,
     navigationPosition: 'right',
     loopBottom: true,
@@ -143,12 +146,15 @@ $(function(){
           }, 1600);
       }
       if(anchorLink == 'technologies'){
-          // remove classes from above
+          // remove classes from above and below
           $('#game-text').removeClass('animated fadeInUp');
           $('#game-headline').removeClass('animated fadeInDown');
           $('#gamephone1').removeClass('animated fadeInLeft');
           $('#gamephone2').removeClass('animated fadeInLeft');
           $('#gamephone3').removeClass('animated fadeInLeft');
+          $('#work-title').removeClass('animated fadeInDown');
+          $('#tsm-video').removeClass('animated fadeInUp');
+          $('#project-slider').removeClass('animated rotateInDownRight');
           // show current
           $('#tech-head').addClass('animated rollIn');
           setTimeout(function(){
@@ -167,6 +173,26 @@ $(function(){
             $('#socials').addClass('animated fadeInDown');
             $('#analytics').addClass('animated fadeInUp');
           }, 1750);
+      }
+      if(anchorLink == 'work'){
+          // remove classes from above
+          $('#tech-head').removeClass('animated rollIn');
+          $('#sublime').removeClass('animated fadeInDown');
+          $('#mobile').removeClass('animated fadeInUp');
+          $('#terminal').removeClass('animated fadeInDown');
+          $('#photoshop').removeClass('animated fadeInUp');
+          $('#security').removeClass('animated fadeInDown');
+          $('#design').removeClass('animated fadeInUp');
+          $('#socials').removeClass('animated fadeInDown');
+          $('#analytics').removeClass('animated fadeInUp');
+          // show current
+          $('#work-title').addClass('animated fadeInDown');
+          setTimeout(function(){
+            $('#tsm-video').addClass('animated fadeInUp');
+          }, 500);
+          setTimeout(function(){
+            $('#project-slider').addClass('animated rotateInDownRight');
+          }, 1000);
       }
     }
   });
@@ -218,4 +244,26 @@ $('input').focus(function(){
     var query = this.id;
     $("label[for='"+query+"']").removeClass('active');
   }
+});
+
+// get portfolio from TSM
+
+$(document).ready(function() {
+  $.ajax({
+    type: "GET",
+    url: "https://www.trendsettermarketing.net/api/?json=get_posts&post_type=us_portfolio&count=10&order=desc",
+    dataType: "json",
+    success: function(data){
+      var posts = data.posts;
+      $(posts).each(function(){
+        var title = this.title.replace('&#8221;', '\"').replace('&#8220;', '\"').replace('&#8217;', '\'');
+        var image = this.thumbnail_images.medium_large.url;
+        var liConstructor = "<li><img src=\""+image+"\"><div class=\"caption center-align\"><h5 class=\"light grey-text text-lighten-3\">"+title+"</h5></div></li>";
+        $('.slides').append(liConstructor);
+      });
+      $('.slider').slider({
+        indicators: false
+      });
+    }
+  });
 });
