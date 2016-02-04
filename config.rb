@@ -2,8 +2,9 @@
 
 # helpers do
 #   def get_tsm_portfolio
-#     response = HTTParty.get('https://www.trendsettermarketing.net/wp-json/wp/v2/posts?filter[type]=us_portfolio&filter[orderby]=desc&filter[posts_per_page]=20')
+#     response = HTTParty.get('https://www.trendsettermarketing.net/api/?json=get_posts&post_type=us_portfolio/')
 #     @body = JSON.parse(response.body)
+#     @body = @body["posts"]
 #   end
 # end
 
