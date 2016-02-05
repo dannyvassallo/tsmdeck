@@ -36,6 +36,8 @@ function hideAll(){
   $('#work-title').css('opacity', 0);
   $('#tsm-video').css('opacity', 0);
   $('#project-slider').css('opacity', 0);
+  $('#thanks').css('opacity', 0);
+  $('#contact-btn').css('opacity', 0);
 }
 
 $(function(){
@@ -43,7 +45,7 @@ $(function(){
   // Init full page
   $('#fullpage').fullpage({
     //Navigation
-    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram', 'games', 'technologies', 'work'],
+    anchors: ['intro', 'whatwedo', 'sharecontest', 'spotify', 'instagram', 'games', 'technologies', 'work', 'contact'],
     navigation: true,
     navigationPosition: 'right',
     loopBottom: true,
@@ -175,7 +177,7 @@ $(function(){
           }, 1750);
       }
       if(anchorLink == 'work'){
-          // remove classes from above
+          // remove classes from above and below
           $('#tech-head').removeClass('animated rollIn');
           $('#sublime').removeClass('animated fadeInDown');
           $('#mobile').removeClass('animated fadeInUp');
@@ -185,6 +187,8 @@ $(function(){
           $('#design').removeClass('animated fadeInUp');
           $('#socials').removeClass('animated fadeInDown');
           $('#analytics').removeClass('animated fadeInUp');
+          $('#thanks').removeClass('animated fadeInRight');
+          $('#contact-btn').removeClass('animated fadeInLeft');
           // show current
           $('#work-title').addClass('animated fadeInDown');
           setTimeout(function(){
@@ -193,6 +197,15 @@ $(function(){
           setTimeout(function(){
             $('#project-slider').addClass('animated rotateInDownRight');
           }, 1000);
+      }
+      if(anchorLink == 'contact'){
+          // remove classes from above
+          $('#work-title').removeClass('animated fadeInDown');
+          $('#tsm-video').removeClass('animated fadeInUp');
+          $('#project-slider').removeClass('animated rotateInDownRight');
+          // show current
+          $('#thanks').addClass('animated fadeInRight');
+          $('#contact-btn').addClass('animated fadeInLeft');
       }
     }
   });
