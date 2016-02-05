@@ -300,3 +300,35 @@ $(document).ready(function() {
     }
   });
 });
+
+// Size Warning
+function sizeAlert(){
+  var winH  = $(window).height();
+  var winW = $(window).width();
+  $('#window-w').html(winW);
+  $('#window-h').html(winH);
+  // console.log(winW, winH);
+  if(winW < 1024 && winH < 768){
+    $('#size-alert').openModal();
+  } else if(winW < 1024){
+    $('#size-alert').openModal();
+  } else if (winH < 768){
+    $('#size-alert').openModal();
+  }
+}
+
+function sizeCheck(){
+  if($('#size-alert').css('display') == 'none'){
+    sizeAlert();
+  } else {
+    return false;
+  }
+}
+
+$(function(){
+  sizeCheck();
+});
+
+$(window).resize(function(){
+  sizeCheck();
+});
