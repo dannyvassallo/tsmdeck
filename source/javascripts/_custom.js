@@ -15,10 +15,13 @@ function hideAll(){
   $('#share-contest').css('opacity', 0);
   $('#share-ipad').css('opacity', 0);
   $('#imac').css('opacity', 0);
+  $('#spotifypromo2').css('opacity', 0);
   $('#imac-header').css('opacity', 0);
   $('#imac-text').css('opacity', 0);
   $('#hashtags').css('opacity', 0);
   $('#insta-text').css('opacity', 0);
+  $('#hashtags2').css('opacity', 0);
+  $('#insta-text2').css('opacity', 0);
   $('#game-text').css('opacity', 0);
   $('#game-headline').css('opacity', 0);
   $('#gamephone1').css('opacity', 0);
@@ -82,6 +85,7 @@ $(function(){
           $('#imac').removeClass('animated fadeInUp');
           $('#imac-header').removeClass('animated fadeInLeft');
           $('#imac-text').removeClass('animated fadeInRight');
+          $('#spotifypromo2').removeClass('animated fadeInUp');
           // show current
           $('#share-ipad').addClass('animated fadeInDown');
           setTimeout(function(){
@@ -94,9 +98,12 @@ $(function(){
           $('#share-contest').removeClass('animated fadeInUp');
           $('#insta-text').removeClass('animated fadeInRight');
           $('#hashtags').removeClass('animated fadeInLeft');
+          $('#insta-text2').removeClass('animated fadeInRight');
+          $('#hashtags2').removeClass('animated fadeInLeft');
           // show current
           setTimeout(function(){
             $('#imac').addClass('animated fadeInUp');
+            $('#spotifypromo2').addClass('animated fadeInUp');
           }, 500);
           setTimeout(function(){
             $('#imac-text').addClass('animated fadeInRight');
@@ -108,6 +115,7 @@ $(function(){
           $('#imac').removeClass('animated fadeInUp');
           $('#imac-header').removeClass('animated fadeInLeft');
           $('#imac-text').removeClass('animated fadeInRight');
+          $('#spotifypromo2').removeClass('animated fadeInUp');
           $('#game-text').removeClass('animated fadeInUp');
           $('#game-headline').removeClass('animated fadeInDown');
           $('#gamephone1').removeClass('animated fadeInLeft');
@@ -116,13 +124,17 @@ $(function(){
           // show current
           setTimeout(function(){
             $('#insta-text').addClass('animated fadeInRight');
+            $('#insta-text2').addClass('animated fadeInRight');
           }, 500);
           $('#hashtags').addClass('animated fadeInLeft');
+          $('#hashtags2').addClass('animated fadeInLeft');
       }
       if(anchorLink == 'games'){
           // remove classes from above and below
           $('#hashtags').removeClass('animated fadeInLeft');
           $('#insta-text').removeClass('animated fadeInRight');
+          $('#hashtags2').removeClass('animated fadeInLeft');
+          $('#insta-text2').removeClass('animated fadeInRight');
           $('#tech-head').removeClass('animated rollIn');
           $('#sublime').removeClass('animated fadeInDown');
           $('#mobile').removeClass('animated fadeInUp');
