@@ -310,15 +310,20 @@ function sizeAlert(){
   // console.log(winW, winH);
   if(winW < 1024 && winH < 768){
     $('#size-alert').openModal();
+    neverFired = false;
   } else if(winW < 1024){
     $('#size-alert').openModal();
+    neverFired = false;
   } else if (winH < 768){
     $('#size-alert').openModal();
+    neverFired = false;
   }
 }
 
+var neverFired = true;
+
 function sizeCheck(){
-  if($('#size-alert').css('display') == 'none'){
+  if($('#size-alert').css('display') == 'none' && neverFired === true){
     sizeAlert();
   } else {
     return false;
