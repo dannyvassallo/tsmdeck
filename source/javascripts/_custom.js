@@ -284,7 +284,7 @@ $('input').focus(function(){
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "https://www.trendsettermarketing.net/api/?json=get_posts&post_type=us_portfolio&count=10&order=desc",
+    url: "http://www.trendsettermarketing.net/api/?json=get_posts&post_type=us_portfolio&count=10&order=desc",
     dataType: "json",
     success: function(data){
       var posts = data.posts;
